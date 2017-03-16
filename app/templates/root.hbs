@@ -1,0 +1,11 @@
+
+{{model.id}} <br/>
+{{model.currentVersion}} <br/>
+
+<ul>
+  {{#each model.services as |service|}}
+    <li>{{service.id}}</li>
+  {{/each}}
+</ul>
+
+{{outlet}}

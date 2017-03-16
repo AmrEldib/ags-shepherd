@@ -7,6 +7,9 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('root', {
+    path: '/p/:protocol/h/:host/i/:instance'
+  });
 });
 
 export default Router;
