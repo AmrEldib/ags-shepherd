@@ -1,0 +1,7 @@
+import DS from 'ember-data';
+import Service from './service';
+
+export default Service.extend({
+    mapName: DS.attr("string"),
+    description: DS.attr("string")
+});
