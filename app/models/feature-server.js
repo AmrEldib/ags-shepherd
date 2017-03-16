@@ -87,7 +87,7 @@ Syntax
     documentInfoCategory: DS.attr("string"),
     documentInfoKeywords: DS.attr("string"),
     layers: DS.hasMany("feature-layer"),
-    tables: DS.hasMany("feature-layer"),
+    tables: DS.hasMany("feature-table"),
     enableZDefaults: DS.attr("boolean"),
     zDefault: DS.attr("string")
 });
