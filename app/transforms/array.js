@@ -1,9 +1,11 @@
 import DS from 'ember-data';
 
+// source: http://stackoverflow.com/a/19557708/463
+
 export default DS.Transform.extend({
   deserialize: function(serialized) {
     return (Ember.typeOf(serialized) == "array")
-        ? serialized 
+        ? serialized
         : [];
   },
 

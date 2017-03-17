@@ -97,7 +97,7 @@ export default Service.extend({
 	supportsDynamicLayers: DS.attr("boolean"),
 	layers: DS.hasMany("mapLayer"),	// layer
 	tables: DS.hasMany("mapTable"),	// table
-	spatialReference: DS.attr("string"), 	// spatial reference
+	spatialReference: DS.attr("spatial-reference"), 	// spatial reference
 	singleFusedMapCache: DS.attr("boolean"),
 	tileRows: DS.attr("number"),
 	tileCols: DS.attr("number"),
@@ -106,7 +106,7 @@ export default Service.extend({
 	tileCompressionQuality: DS.attr("number"),
 	tileOriginX: DS.attr("number"),
 	tileOriginY: DS.attr("number"),
-	tileSpatialReference: DS.attr("string"),	// spatial reference
+	tileSpatialReference: DS.attr("spatial-reference"),	// spatial reference
 	tileLods: DS.hasMany("tileLods"),	// tile lods
 	initialExtent: DS.attr("string"),	// envelope
 	fullExtent: DS.attr("string"), 		// envelope

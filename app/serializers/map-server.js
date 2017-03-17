@@ -16,7 +16,7 @@ export default Service.extend({
 					supportsDynamicLayers: payload.supportsDynamicLayers,
 					layers: DS.hasMany("mapLayer"),	// layer
 					tables: DS.hasMany("mapTable"),	// table
-					//spatialReference: DS.attr("string"), 	// spatial reference
+					spatialReference: DS.attr("spatial-reference"), 	// spatial reference
 					singleFusedMapCache: payload.singleFusedMapCache,
 					tileRows: payload.tileInfo.rows,
 					tileCols: payload.tileInfo.cols,
