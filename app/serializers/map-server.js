@@ -14,8 +14,8 @@ export default Service.extend({
 					description: payload.description,
 					copyrightText: payload.copyrightText,
 					supportsDynamicLayers: payload.supportsDynamicLayers,
-					//layers: DS.hasMany("mapLayer"),	// layer
-					//tables: DS.hasMany("mapTable"),	// table
+					layers: DS.hasMany("mapLayer"),	// layer
+					tables: DS.hasMany("mapTable"),	// table
 					//spatialReference: DS.attr("string"), 	// spatial reference
 					singleFusedMapCache: payload.singleFusedMapCache,
 					tileRows: payload.tileInfo.rows,
