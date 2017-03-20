@@ -107,7 +107,7 @@ export default Service.extend({
 	tileOriginX: DS.attr("number"),
 	tileOriginY: DS.attr("number"),
 	tileSpatialReference: DS.attr("spatial-reference"),	// spatial reference
-	tileLods: DS.hasMany("tileLods"),	// tile lods
+	tileLods: DS.attr("tile-lod"),	// tile lods
 	initialExtent: DS.attr("string"),	// envelope
 	fullExtent: DS.attr("string"), 		// envelope
     timeExtent: DS.attr("string"), // array of two numbers

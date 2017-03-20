@@ -24,22 +24,22 @@ export default Service.extend({
 					allowGeometryUpdates: payload.allowGeometryUpdates,
 					units: payload.units,
 					syncEnabled: payload.syncEnabled,
-					supportsASync: payload.syncCapabilities.supportsASync,
-					supportsRegisteringExistingData: payload.syncCapabilities.supportsRegisteringExistingData,
-					supportsSyncDirectionControl: payload.syncCapabilities.supportsSyncDirectionControl,
-					supportsPerLayerSync: payload.syncCapabilities.supportsPerLayerSync,
-					supportsPerReplicaSync: payload.syncCapabilities.supportsPerReplicaSync,
-					supportsRollbackOnFailure: payload.supportsRollbackOnFailure,
+					supportsASync: (payload.syncCapabilities) ? payload.syncCapabilities.supportsASync : undefined,
+					supportsRegisteringExistingData: (payload.syncCapabilities) ? payload.syncCapabilities.supportsRegisteringExistingData : undefined,
+					supportsSyncDirectionControl: (payload.syncCapabilities) ? payload.syncCapabilities.supportsSyncDirectionControl : undefined,
+					supportsPerLayerSync: (payload.syncCapabilities) ? payload.syncCapabilities.supportsPerLayerSync : undefined,
+					supportsPerReplicaSync: (payload.syncCapabilities) ? payload.syncCapabilities.supportsPerReplicaSync : undefined,
+					supportsRollbackOnFailure: (payload.syncCapabilities) ? payload.supportsRollbackOnFailure : undefined,
 					enableEditorTracking: payload.enableEditorTracking,
 					enableOwnershipAccessControl: payload.enableOwnershipAccessControl,
 					allowOthersToUpdate: payload.allowOthersToUpdate,
 					allowOthersToDelete: payload.allowOthersToDelete,
-					documentInfoTitle: payload.documentInfoTitle,
-					documentInfoAuthor: payload.documentInfoAuthor,
-					documentInfoComments: payload.documentInfoComments,
-					documentInfoSubject: payload.documentInfoSubject,
-					documentInfoCategory: payload.documentInfoCategory,
-					documentInfoKeywords: payload.documentInfoKeywords,
+					documentInfoTitle: (payload.documentInfo) ? payload.documentInfo.title : undefined,
+					documentInfoAuthor: (payload.documentInfo) ? payload.documentInfo.author : undefined,
+					documentInfoComments: (payload.documentInfo) ? payload.documentInfo.comments : undefined,
+					documentInfoSubject: (payload.documentInfo) ? payload.documentInfo.subject : undefined,
+					documentInfoCategory: (payload.documentInfo) ? payload.documentInfo.category : undefined,
+					documentInfoKeywords: (payload.documentInfo) ? payload.documentInfo.keywords : undefined,
 					enableZDefaults: payload.enableZDefaults,
 					zDefault: payload.zDefault
 				},
@@ -60,7 +60,7 @@ export default Service.extend({
 				id: id + "/" + layer.id
 			});
 		});
-		payload.tables.forEach(function (tableName) {
+		payload.tables.forEach(function (table) {
 			r.data.relationships.tables.data.push({
 				type: "feature-layer",
 				id: id + "/" + table.id

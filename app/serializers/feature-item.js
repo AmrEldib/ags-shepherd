@@ -80,19 +80,6 @@ export default DS.Serializer.extend({
 			}
 		};
 
-		payload.layers.forEach(function (layer) {
-			r.data.relationships.layers.data.push({
-				type: "feature-layer",
-				id: id + "/" + layer.id
-			});
-		});
-		payload.tables.forEach(function (tableName) {
-			r.data.relationships.tables.data.push({
-				type: "feature-layer",
-				id: id + "/" + table.id
-			});
-		});
-
 		return r;
 	}
 });
