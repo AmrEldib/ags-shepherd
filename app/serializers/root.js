@@ -43,8 +43,6 @@ export default AgsFolder.extend({
 		delete r.data.attributes.folders;
 		delete r.data.attributes.services;
 
-		console.log(r);
-
 		return r;
 	}
 });

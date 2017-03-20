@@ -9,6 +9,14 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('root', {
     path: '/p/:protocol/h/:host/i/:instance'
+  }, function() {
+    this.route('folder', {
+      path: '/f/:folder'
+    });
+
+    this.route('MapServer', {
+      path: '/mapServer/:serviceName'
+    });
   });
 });
 

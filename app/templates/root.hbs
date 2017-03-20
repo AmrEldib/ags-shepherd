@@ -4,7 +4,12 @@
 
 <ul>
   {{#each model.services as |service|}}
-    <li>{{service.id}}</li>
+    {{log service.type}}
+    {{#if (is-map-server service.id)}}
+      <li>{{#link-to (concat "root." service.type) service.serviceName}}{{service.serviceName}}{{/link-to}}</li>
+    {{else}}
+      <li>{{service.id}}</li>
+    {{/if}}
   {{/each}}
 </ul>
 
