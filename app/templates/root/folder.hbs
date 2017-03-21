@@ -1,1 +1,16 @@
+
+    <h2>Folders</h2>
+    <ul>
+      {{#each model.folders as |folder|}}
+        <li>{{#link-to "root.folder" folder.name}}{{folder.name}}{{/link-to}}</li>
+      {{/each}}
+    </ul>
+
+    <h2>Services</h2>
+    <ul>
+      {{#each model.services as |service|}}
+        <li>{{#link-to (concat "root." service.serviceType) service.serviceName}}{{service.serviceName}}{{/link-to}}</li>
+      {{/each}}
+    </ul>
+
 {{outlet}}

@@ -37,6 +37,10 @@ Router.map(function() {
     this.route('ImageServer', {
       path: '/imageServer/:serviceName'
     });
+
+    this.route('NAServer', {
+      path: '/naserver/:serviceName'
+    });
   });
 });
 
