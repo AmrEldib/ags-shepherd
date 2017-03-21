@@ -4,14 +4,15 @@ body {
 
 .wrapper {
   display: grid;
+  grid-template-columns: 30% 70%;
   grid-gap: 10px;
   background-color: #fff;
   color: #444;
 }
 
 .box {
-  background-color: green;
-  color: #fff;
+  background-color: lightgray;
+  color: black;
   border-radius: 5px;
   padding: 20px;
 }

@@ -62,7 +62,7 @@ export default Service.extend({
 		});
 		payload.tables.forEach(function (table) {
 			r.data.relationships.tables.data.push({
-				type: "feature-layer",
+				type: "feature-table",
 				id: id + "/" + table.id
 			});
 		});

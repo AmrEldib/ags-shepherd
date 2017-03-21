@@ -17,6 +17,26 @@ Router.map(function() {
     this.route('MapServer', {
       path: '/mapServer/:serviceName'
     });
+
+    this.route('FeatureServer', {
+      path: '/featureServer/:serviceName'
+    });
+
+    this.route('GeometryServer', {
+      path: '/geometryServer/:serviceName'
+    });
+
+    this.route('GPServer', {
+      path: '/gpServer/:serviceName'
+    });
+
+    this.route('MobileServer', {
+      path: '/mobileServer/:serviceName'
+    });
+
+    this.route('ImageServer', {
+      path: '/imageServer/:serviceName'
+    });
   });
 });
 

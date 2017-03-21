@@ -2,7 +2,7 @@ import DS from 'ember-data';
 import Ember from 'ember';
 
 export default DS.Model.extend({
-    type: Ember.computed('id', function() {
+    serviceType: Ember.computed('id', function() {
         return this.get('id').substring(this.get('id').lastIndexOf("/") + 1);
     }),
     serviceName: Ember.computed('id', function() {

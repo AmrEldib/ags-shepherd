@@ -52,9 +52,30 @@ export default Service.extend({
 					maxExportTilesCount: payload.maxExportTilesCount,
 					supportedExtensions: payload.supportedExtensions,
 					resampling: payload.resampling
+				},
+				relationships: {
+					layers: {
+						data: []
+					},
+					tables: {
+						data: []
+					}
 				}
 			}
 		};
+
+		payload.layers.forEach(function (layer) {
+			r.data.relationships.layers.data.push({
+				type: "map-layer",
+				id: id + "/" + layer.id
+			});
+		});
+		payload.tables.forEach(function (table) {
+			r.data.relationships.tables.data.push({
+				type: "map-table",
+				id: id + "/" + table.id
+			});
+		});
 
 		return r;
 	}

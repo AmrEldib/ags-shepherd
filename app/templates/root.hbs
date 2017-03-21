@@ -1,16 +1,17 @@
 
-{{model.id}} <br/>
-{{model.currentVersion}} <br/>
+<div class="wrapper">
+	<div class="box">
+    {{#link-to "root" model}}{{model.host}}/{{model.instance}}{{/link-to}}<br/>
+    {{model.currentVersion}} <br/>
 
-<ul>
-  {{#each model.services as |service|}}
-    {{log service.type}}
-    {{#if (is-map-server service.id)}}
-      <li>{{#link-to (concat "root." service.type) service.serviceName}}{{service.serviceName}}{{/link-to}}</li>
-    {{else}}
-      <li>{{service.id}}</li>
-    {{/if}}
-  {{/each}}
-</ul>
+    <ul>
+      {{#each model.services as |service|}}
+        <li>{{#link-to (concat "root." service.serviceType) service.serviceName}}{{service.serviceName}}{{/link-to}}</li>
+      {{/each}}
+    </ul>
+	</div>
 
-{{outlet}}
+  <div class="box">
+		{{outlet}}
+	</div>
+</div>
