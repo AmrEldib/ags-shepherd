@@ -1,7 +1,11 @@
 
 <div class="wrapper">
 	<div class="box">
-    {{#link-to "root" model}}{{model.host}}/{{model.instance}}{{/link-to}}<br/>
+	{{#if mode.isRoot}}
+    	{{#link-to "root" model}}{{model.host}}/{{model.instance}}{{/link-to}}<br/>
+	{{else}}
+		{{#link-to "root" model}}{{model.folder}}{{/link-to}}<br/>
+	{{/if}}
     {{model.currentVersion}} <br/>
 
     <h2>Folders</h2>

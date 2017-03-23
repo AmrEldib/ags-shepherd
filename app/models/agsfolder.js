@@ -13,13 +13,31 @@ export default DS.Model.extend({
         host = host.substring(0, host.indexOf("/"));
         return host;
     }),
-    instance: Ember.computed('id', function() {        
+    instance: Ember.computed('id', function() {
         let i = this.get('id').substring(0, this.get('id').lastIndexOf("/rest/services"));
         i = i.replace("https://", "");
         i = i.replace("http://", "");
         i = i.substring(i.indexOf("/") + 1);
         return i;
     }),
+	path: Ember.computed('id', function() {
+		return this.get('id').substring(this.get('id').lastIndexOf("/rest/services") + "/rest/services".length + 1);
+	}),
+	folder: Ember.computed('path', function() {
+		if (this.get('path') === "") {
+			return "";
+		}
+		let i = this.get('path').lastIndexOf('/');
+		if (i > 0) {
+			return this.get('path').substring(i + 1);
+		}
+		else {
+			return this.get('path');
+		}
+	}),
+	isRoot: Ember.computed('folder', function() {
+		return (this.get('folder') === "");
+	}),
     folders: DS.hasMany('folder', { inverse: 'parent' } ),
     services: DS.hasMany('service')
 });

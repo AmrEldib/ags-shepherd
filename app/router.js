@@ -11,7 +11,7 @@ Router.map(function() {
     path: '/p/:protocol/h/:host/i/:instance'
   }, function() {
     this.route('folder', {
-      path: '/f/:folder'
+      path: '/*folder'
     });
 
     this.route('MapServer', {
